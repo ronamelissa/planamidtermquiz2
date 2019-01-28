@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block head %}
+  this is the detail page
+{% endblock %}
+
+{% block body %}
+  <div align='center' class='container'>
+    <h1> Post Title: {{post.title_text}} </h1>
+  <h6>Date Created: {{post.date_created}} </h6><br/>
+  Content: {{post.content_text}} <br/>
+  <br/>
+  <hr>
+  <a href ="{% url 'post:comment' post.id %}"> Comment </a> ||
+  <a href ="{% url 'post:update' post.id %}"> Update </a> <br/>
+  </div>
+{% endblock %}
